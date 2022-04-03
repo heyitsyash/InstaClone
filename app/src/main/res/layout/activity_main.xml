@@ -24,7 +24,6 @@
         android:layout_height="70dp"
         android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
-
         android:src="@drawable/instatext"
         app:layout_constraintStart_toEndOf="@+id/camera_button"
         app:layout_constraintTop_toTopOf="parent"

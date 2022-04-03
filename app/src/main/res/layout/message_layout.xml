@@ -30,15 +30,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sent TatvIndia Reels... 16h"
+        android:id="@+id/message_text"
+        android:text="@string/message"
         app:layout_constraintTop_toBottomOf="@+id/message_name"
         app:layout_constraintStart_toStartOf="@id/message_name"
         android:layout_marginTop="0dp"
         android:textSize="15dp"/>
 
    <ImageView
-       android:layout_width="30dp"
-       android:layout_height="30dp"
+       android:layout_width="25dp"
+       android:layout_height="25dp"
        android:id="@+id/camera_icon"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent"
