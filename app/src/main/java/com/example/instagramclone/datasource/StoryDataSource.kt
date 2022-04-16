@@ -1,5 +1,6 @@
-package com.example.instagramclone
+package com.example.instagramclone.datasource
 
+import com.example.instagramclone.R
 import com.example.instagramclone.utils.StoryData
 
 class StoryDataSource() {

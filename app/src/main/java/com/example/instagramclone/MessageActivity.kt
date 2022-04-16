@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.instagramclone.Adapter.MessageAdapter
 import com.example.instagramclone.databinding.ActivityMessageBinding
+import com.example.instagramclone.datasource.MessageDataSource
 
 private lateinit var binding :ActivityMessageBinding
 class MessageActivity : AppCompatActivity() {
