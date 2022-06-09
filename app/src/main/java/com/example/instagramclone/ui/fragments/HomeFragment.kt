@@ -11,7 +11,7 @@ import com.example.instagramclone.Adapter.FeedAdapter
 import com.example.instagramclone.Adapter.StoryAdapter
 import com.example.instagramclone.databinding.FragmentHomeBinding
 import com.example.instagramclone.datasource.StoryDataSource
-import com.example.instagramclone.datasource.dataSource
+import com.example.instagramclone.datasource.FeedDataSource
 
 
 private lateinit var binding : FragmentHomeBinding
@@ -29,7 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         //feed Recycler View
-        val myDataSet = dataSource().loadFeedDetails()
+        val myDataSet = FeedDataSource().loadFeedDetails()
         binding.feedRecyclerview.adapter = FeedAdapter(requireContext(), myDataSet)
         binding.feedRecyclerview.setHasFixedSize(true)
 

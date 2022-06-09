@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.instagramclone.Adapter.SearchAdapter
+import com.example.instagramclone.Adapter.SearchMemesAdapter
 import com.example.instagramclone.Adapter.SearchNewsAdapter
 import com.example.instagramclone.repository.MemeInterface
 import com.example.instagramclone.repository.NewsInterface
@@ -16,15 +15,13 @@ import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentSearchBinding
 import com.example.instagramclone.utils.MemesData
 import com.example.instagramclone.utils.NewsData
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URl = "https://meme-api.herokuapp.com/"
-const val NEWS_URL = "https://newsapi.org/"
+const val BASE_MEMES_URl = "https://meme-api.herokuapp.com/"
+const val BASE_NEWS_URL = "https://newsapi.org/"
 private lateinit var binding: FragmentSearchBinding
-private lateinit var searchAdapter: SearchAdapter
+private lateinit var searchAdapter: SearchMemesAdapter
 private lateinit var searchNewsAdapter: SearchNewsAdapter
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
@@ -71,7 +68,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URl)
+            .baseUrl(BASE_MEMES_URl)
             .build()
             .create(MemeInterface::class.java)
 
@@ -83,7 +80,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
                 binding.progressBar.visibility = View.GONE
                 val responseBody: MemesData = response.body()!!
-                searchAdapter = SearchAdapter(requireContext(), responseBody.memes)
+                searchAdapter = SearchMemesAdapter(requireContext(), responseBody.memes)
                 binding.searchRecycleView.adapter = searchAdapter
 
 
@@ -101,7 +98,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(NEWS_URL)
+            .baseUrl(BASE_NEWS_URL)
             .build()
             .create(NewsInterface::class.java)
 

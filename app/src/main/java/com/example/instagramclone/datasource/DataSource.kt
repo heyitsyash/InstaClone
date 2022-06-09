@@ -3,7 +3,7 @@ package com.example.instagramclone.datasource
 import com.example.instagramclone.R
 import com.example.instagramclone.utils.FeedData
 
-class dataSource() {
+class FeedDataSource() {
 
     fun loadFeedDetails() : List<FeedData>{
 

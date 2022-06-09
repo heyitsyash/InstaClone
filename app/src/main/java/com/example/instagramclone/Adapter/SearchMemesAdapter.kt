@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.instagramclone.R
 import com.example.instagramclone.utils.Memes
-import org.w3c.dom.Text
 
-class SearchAdapter(private val context: Context,private val dataset : List<Memes>) : RecyclerView.Adapter<SearchAdapter.ViewHolder>(){
+class SearchMemesAdapter(private val context: Context, private val dataset : List<Memes>) : RecyclerView.Adapter<SearchMemesAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val memesImage : ImageView = itemView.findViewById(R.id.memes_image)
