@@ -1,8 +1,6 @@
 package com.example.instagramclone.Adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instagramclone.R
-import com.example.instagramclone.utils.MessageData
+import com.example.instagramclone.model.MessageData
 
 class MessageAdapter(context:Context, private val dataset : List<MessageData>):RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
 

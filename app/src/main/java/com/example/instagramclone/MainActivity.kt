@@ -9,7 +9,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.instagramclone.Adapter.FeedAdapter
 import com.example.instagramclone.Adapter.MessageAdapter
 import com.example.instagramclone.Adapter.StoryAdapter
 import com.example.instagramclone.databinding.ActivityMainBinding

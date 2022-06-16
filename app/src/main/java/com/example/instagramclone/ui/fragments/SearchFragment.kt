@@ -13,8 +13,8 @@ import com.example.instagramclone.repository.MemeInterface
 import com.example.instagramclone.repository.NewsInterface
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentSearchBinding
-import com.example.instagramclone.utils.MemesData
-import com.example.instagramclone.utils.NewsData
+import com.example.instagramclone.model.MemesData
+import com.example.instagramclone.model.NewsData
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -1,4 +1,4 @@
-package com.example.instagramclone.utils
+package com.example.instagramclone.model
 
 //model class which has to be added in the firestore collection
 data class User(

@@ -1,6 +1,8 @@
 package com.example.instagramclone.daos
 
-import com.example.instagramclone.utils.User
+import com.example.instagramclone.model.User
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -21,5 +23,9 @@ class UserDao {
                 userCollection.document(user.uid).set(it)
             }
         }
+    }
+
+    fun gwtUserById(uID :String) : Task<DocumentSnapshot>{
+        return userCollection.document(uID).get()
     }
 }

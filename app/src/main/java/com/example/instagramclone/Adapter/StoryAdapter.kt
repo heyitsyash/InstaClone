@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instagramclone.R
-import com.example.instagramclone.utils.StoryData
+import com.example.instagramclone.model.StoryData
 
 class StoryAdapter(private val context:Context,private val dataset : List<StoryData>) : RecyclerView.Adapter<StoryAdapter.ItemViewHolder>() {
 
@@ -19,7 +19,7 @@ class StoryAdapter(private val context:Context,private val dataset : List<StoryD
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.items,parent,false)
+            .inflate(R.layout.story_items,parent,false)
 
         return ItemViewHolder(adapterLayout)
     }

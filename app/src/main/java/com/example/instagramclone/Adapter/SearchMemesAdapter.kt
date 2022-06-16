@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.instagramclone.R
-import com.example.instagramclone.utils.Memes
+import com.example.instagramclone.model.Memes
 
 class SearchMemesAdapter(private val context: Context, private val dataset : List<Memes>) : RecyclerView.Adapter<SearchMemesAdapter.ViewHolder>(){
 

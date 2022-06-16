@@ -1,90 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.faltenreich.skeletonlayout.SkeletonLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skeletonLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    android:layout_height="match_parent">
 
 
-
-    <ImageView
-        android:id="@+id/camera_button"
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:background="@color/white"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/insta_text"
-        app:layout_constraintBottom_toBottomOf="@+id/insta_text"
-        app:srcCompat="@drawable/camera" />
-
-    <ImageView
-        android:id="@+id/insta_text"
-        android:layout_width="251dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="5dp"
-        android:src="@drawable/instatext"
-        app:layout_constraintStart_toEndOf="@+id/camera_button"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="45dp"
-        android:layout_marginRight="8dp"
-        android:id="@+id/send_image"
-        android:src="@drawable/send"
-        app:layout_constraintTop_toTopOf="@+id/insta_text"
-        app:layout_constraintBottom_toBottomOf="@id/insta_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="10dp"/>
-
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:id="@+id/border_line"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/insta_text"/>
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:ignore="ExtraText">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:id="@+id/story_recycler"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/items"
-        app:layout_constraintTop_toBottomOf="@+id/insta_text"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        <ImageView
+            android:id="@+id/camera_button"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/white"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/insta_text"
+            app:layout_constraintBottom_toBottomOf="@+id/insta_text"
+            app:srcCompat="@drawable/camera" />
 
-        />
+        <ImageView
+            android:id="@+id/insta_text"
+            android:layout_width="251dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/instatext"
+            app:layout_constraintStart_toEndOf="@+id/camera_button"
+            app:layout_constraintTop_toTopOf="parent"
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@+id/story_recycler"/>
+            />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        android:scrollbars="vertical"
-        android:id="@+id/feed_recyclerview"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/story_recycler"
-        app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/feed_items" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/post_send_image"
+            android:src="@drawable/send"
+            app:layout_constraintTop_toTopOf="@+id/insta_text"
+            app:layout_constraintBottom_toBottomOf="@id/insta_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/border_line"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/insta_text"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:id="@+id/story_recycler"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/story_items"
+            app:layout_constraintTop_toBottomOf="@+id/insta_text"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/story_recycler"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:id="@+id/feed_recyclerview"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/story_recycler"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/post_items" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Views to mask -->
+
+</com.faltenreich.skeletonlayout.SkeletonLayout>
+

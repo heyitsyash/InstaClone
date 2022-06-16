@@ -1,7 +1,6 @@
 package com.example.instagramclone.Adapter
 
 import android.content.Context
-import android.icu.number.NumberFormatter.with
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.Glide.with
 import com.example.instagramclone.R
-import com.example.instagramclone.utils.Articles
+import com.example.instagramclone.model.Articles
 
 class SearchNewsAdapter(private val context:Context, private val articles : List<Articles>) : RecyclerView.Adapter<SearchNewsAdapter.NewsViewHolder>() {
 

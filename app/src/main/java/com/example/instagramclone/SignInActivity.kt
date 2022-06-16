@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.instagramclone.daos.UserDao
 import com.example.instagramclone.databinding.ActivitySignInBinding
-import com.example.instagramclone.utils.User
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
+import com.example.instagramclone.model.User
+import com.faltenreich.skeletonlayout.Skeleton
+import com.faltenreich.skeletonlayout.applySkeleton
+import com.faltenreich.skeletonlayout.createSkeleton
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -37,10 +39,12 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySignInBinding
     private lateinit var googleSignInClient: GoogleSignInClient
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
         // [START config_signin]
@@ -65,8 +69,10 @@ class SignInActivity : AppCompatActivity() {
     //if the user is already loged in
     override fun onStart() {
         super.onStart()
+
         val currentUser = auth.currentUser
         updateUI(currentUser)
+        //binding.progressBar.visibility = View.GONE
     }
 
     private fun signIn() {
@@ -104,6 +110,10 @@ class SignInActivity : AppCompatActivity() {
         binding.signInButton.visibility = View.GONE
         binding.emailText.visibility = View.GONE
         binding.passwordText.visibility = View.GONE
+        binding.loginLogo.visibility = View.GONE
+        binding.borderLine.visibility = View.GONE
+        binding.borderLine2.visibility = View.GONE
+        binding.orTextField.visibility = View.GONE
         binding.progressBar.visibility = View.VISIBLE
 
         //signing in user on the background thread user Coroutines
@@ -119,9 +129,7 @@ class SignInActivity : AppCompatActivity() {
 
     private fun updateUI(firebaseUser: FirebaseUser?) {
 
-
         if(firebaseUser != null){
-
             //making the user
             val user = User(firebaseUser.uid,firebaseUser.displayName,firebaseUser.photoUrl.toString())
             val userDao = UserDao()
@@ -129,11 +137,16 @@ class SignInActivity : AppCompatActivity() {
 
             val mainActivity = Intent(this,MainActivity::class.java)
                    startActivity(mainActivity)
+
         }else{
 
             binding.signInButton.visibility = View.VISIBLE
             binding.emailText.visibility = View.VISIBLE
             binding.passwordText.visibility = View.VISIBLE
+            binding.loginLogo.visibility = View.VISIBLE
+            binding.borderLine.visibility = View.VISIBLE
+            binding.borderLine2.visibility = View.VISIBLE
+            binding.orTextField.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         }
     }

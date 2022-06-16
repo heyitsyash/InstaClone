@@ -1,7 +1,6 @@
-package com.example.instagramclone.utils
+package com.example.instagramclone.model
 
 import androidx.annotation.DrawableRes
-import org.w3c.dom.Text
 
 data class FeedData(
     @DrawableRes val profileResId : Int,

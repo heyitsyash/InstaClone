@@ -1,6 +1,6 @@
 package com.example.instagramclone.repository
 
-import com.example.instagramclone.utils.MemesData
+import com.example.instagramclone.model.MemesData
 import retrofit2.Call
 import retrofit2.http.GET
 

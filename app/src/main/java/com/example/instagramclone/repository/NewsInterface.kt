@@ -1,6 +1,6 @@
 package com.example.instagramclone.repository
 
-import com.example.instagramclone.utils.NewsData
+import com.example.instagramclone.model.NewsData
 import retrofit2.Call
 import retrofit2.http.GET
 

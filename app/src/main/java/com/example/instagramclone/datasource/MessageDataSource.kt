@@ -1,7 +1,7 @@
 package com.example.instagramclone.datasource
 
 import com.example.instagramclone.R
-import com.example.instagramclone.utils.MessageData
+import com.example.instagramclone.model.MessageData
 
 class MessageDataSource() {
 
